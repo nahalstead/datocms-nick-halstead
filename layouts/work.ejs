@@ -1,31 +1,59 @@
 <%- include('partials/header', { seoMetaTags: seoMetaTags }) %>
 
-<article class="sheet">
-  <div class="sheet__inner">
-    <h1 class="sheet__title"><%= title %></h1>
-    <p class="sheet__lead"><%= excerpt %></p>
-    <div class="sheet__slider">
-      <div class="slider js_slider">
-        <div class="slider__frame js_frame">
-          <ul class="slider__slides js_slides">
-            <% extraImages.forEach(image => { %>
-              <li class="slider__slide js_slide">
-                <img src="<%= image %>">
-              </li>
-            <% }) %>
+<main id="page" class="container">
+  <div id="wrapper">
+    <!--  PAGE CONTENT -->
+    <div id="page_content">
+
+      <div id="assets" class="gallery">
+
+        <div class="gallery-navigation">
+          <span class="navigation" style="display: inline;">
+            <a href="#" class="prev">Previous</a> / <a href="#" class="next">Next</a>
+            <span class="counter">(<span id="current">2</span> of <span id="total">12</span>)</span>
+          </span>
+          <span class="title" style="display: none;"><%= title %></span>
+          <a href="#" class="open-close-thumbs icon-grid"></a>
+        </div>
+
+        <div class="flexslider js_max_height_target">
+          <ul class="assets_container slides">
+          <% extraImages.forEach(image => { %>
+            <li class="asset image no_caption">
+              <div class="image">
+                <span>
+                  <div class="image-wrapper">
+                  <canvas class="image-placeholder" width="1600" height="1067"></canvas>
+                  <img src="<%= image %>">
+                  </div>
+                </span>
+              </div>
+            </li>
+          <% }) %>  
           </ul>
         </div>
-        <span class="slider__prev js_prev"></span>
-        <span class="slider__next js_next"></span>
-      </div>
-    </div>
-    <div class="sheet__body">
-      <%- contents %>
-    </div>
-    <div class="sheet__gallery">
-      <img src="<%= detailImage %>" />
-    </div>
-  </div>
-</article>
+
+        <div class="pagination"
+          <ul class="thumb_container">
+          <% extraImages.forEach(image => { %>
+            <li class="thumb_item  image">
+              <a href="#">  
+                <span class="thumb_wrap">
+                  <span class="hover-container">
+                    <canvas class="image-placeholder" width="300" height="200" style="background-color: rgb(36, 40, 41); max-height: 168px;"></canvas>
+                    <img src="<%= image %>">
+                    <span class="layer"></span>
+                  </span>
+                </span>                    
+              </a>
+            </li>
+          <% }) %>
+          </ul>  
+        </div>
+
+      </div><!-- CLOSE ASSETS -->
+    </div><!-- CLOSE PAGE CONTENT-->
+  </div><!--  CLOSE WRAPPER -->
+</main>
 
 <%- include('partials/footer') %>

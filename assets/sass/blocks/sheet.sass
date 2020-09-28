@@ -1,9 +1,252 @@
+.container 
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 100%
+    padding: 0 5.5%
+    
+div, embed 
+    outline: none;
+
+#wrapper 
+    width: 70%
+    max-width: 1500px
+    margin: 0 0 0 200px
+    position: relative
+    top: 73px
+    background: #ffffff
+
+#wrapper #page_content 
+    position: relative
+    margin-bottom: 40px
+
+.gallery-navigation 
+    margin: 0 0 7px 0
+    font-weight: normal
+
+.gallery-navigation a 
+    color: #444444
+
+#assets .navigation .counter 
+    padding-left: 17px
+    color: #444444
+    opacity: 0.4
+
+#assets .navigation, #assets .navigation .counter, #assets .navigation #current, #assets .navigation #total, #assets .navigation .open-close-thumbs 
+    text-decoration: none
+    outline: none
+
+#assets .open-close-thumbs 
+    display: inline-block
+    text-decoration: none
+    float: right
+    margin-top: -4px
+    margin-right: -10px
+    font-size: 26px
+
+[class^="icon-"], [class*=" icon-"] 
+    font-family: FontAwesome
+    font-weight: normal
+    font-style: normal
+    text-decoration: inherit
+    -webkit-font-smoothing: antialiased
+    display: inline
+    width: auto
+    height: auto
+    line-height: normal
+    vertical-align: baseline
+    background-image: none
+    background-position: 0 0
+    background-repeat: repeat
+    margin-top: 0
+
+.icon-close::before, body.gallery .icon-grid::before, body.gallery .icon-video::before 
+    font-family: "offset-icons"
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
+    -webkit-font-smoothing: antialiased
+    display: inline-block
+    text-decoration: inherit
+
+.flexslider 
+    position: relative
+    overflow: hidden
+    width: 100%
+    margin: 0
+    padding: 0
+
+.assets_container 
+    text-align: center
+
+.slides 
+    display: block
+
+.assets_container .asset div.image, body.gallery .assets_container .asset div.video 
+    width: 100%
+    display: block
+
+.assets_container .asset div.image > span 
+    position: relative
+    max-width: 100%
+    text-align: left
+    display: block
+
+.image-wrapper 
+    display: inline-block
+    position: relative
+    text-align: left
+
+.assets_container .title_image img, .assets_container .asset.image img, .assets_container .title_image canvas, .assets_container .asset.image canvas
+    max-height: 80vh
+
+img, svg, canvas 
+    max-width: 100%
+    height: auto
+
+.image-placeholder 
+    opacity: 0.4
+    vertical-align: top
+
+audio, canvas, video 
+    display: inline-block
+
+.asset.image img, .asset.title_image img 
+    cursor: pointer
+
+.image-wrapper img 
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 1.0
+    transition: opacity 400ms ease
+    will-change: opacity
+
+.pagination 
+    overflow: hidden
+
+.pagination 
+    position: absolute;
+    top: -9000em;
+    left: -100%;
+    width: 100%;
+    z-index: 9999;
+    padding-top: 30px;
+    background: #ffffff;
+    opacity: 0;
+    min-height: 100%;
+
+.pagination ul.thumb_container 
+    -webkit-box-sizing: content-box
+    -moz-box-sizing: content-box
+    box-sizing: content-box
+    list-style-type: none
+    margin: 0
+    padding: 0
+    width: 103%
+    overflow: hidden
+
+.pagination li 
+    float: left
+    width: 13.66666%
+    margin: 0 3% 3% 0
+
+.pagination li a 
+    display: block;
+    outline: none;
+
+.pagination ul li a .thumb_wrap 
+    overflow: hidden
+    display: block
+    position: relative
+    text-align: center
+    width: auto
+    height: 100%
+
+.pagination li .hover-container 
+    display: inline-block
+    max-width: 100%
+    max-height: 100%
+    margin: 0 auto
+    position: relative
+    vertical-align: top
+
+.pagination li .thumb_wrap .image-placeholder 
+    width: auto
+
+.pagination li .thumb_wrap img 
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+
+
 .sheet
-  padding: 40px 20px
+  padding: 0px
   background-color: white
 
+.about .sheet__body, 
+.about .sheet__gallery 
+  display: block
+
+.about .sheet__lead 
+    display: none
+
+.about .sheet__gallery img 
+    max-width: 260px
+    margin-bottom: 50px
+    height: auto
+
+.sheet__body.visible 
+    display: block
+    position: fixed
+    height: auto
+    width: 100%
+    z-index: 1000
+    top: 89px
+    max-width: 88%
+    text-align: justify
+
+.sheet-bg
+  display: none
+
+.sheet-bg.visible
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity
+  background: #fff
+  display: block
+  z-index: 999
+  height: 100%
+  width: 100%
+
+.more_info.hidden
+  display: none
+.close_info.visible
+  display: inline
+
+.more_info
+  display: inline 
+  z-index: 1001
+  position: relative
+
+.close_info
+  z-index: 1002
+  position: relative
+  display: none
+
 .sheet__inner
-  max-width: 600px
+
 
 .sheet__title
   font-size: 30px
@@ -11,16 +254,28 @@
   font-weight: bold
   color: $dark-body-color
   line-height: 1
+  display: none
 
 .sheet__lead
-  font-size: 16px
-  margin-bottom: 30px
+  font-size: 11px
+  margin-bottom: 0px
+  display: block
+  position: relative
+  width: 100%
+  line-height: 14px  
+
+.sheet__lead.hidden
+  display: none
+
+.sheet__gallery
+  display: none
 
 .sheet__gallery,
 .sheet__slider
-  margin-bottom: 30px
+  margin-bottom: 0px
 
 .sheet__body
+  display: none
   color: $light-body-color
   font-size: 14px
   margin-bottom: 30px
@@ -60,22 +315,31 @@
     font-size: 1.1em
     padding: 20px
 
+  p 
+    font-size: 12px
+
+@media screen and (min-width: 767px)
+#assets 
+    opacity: 1
+
+
 @media screen and (min-width: 900px)
   .sheet
-    padding: 40px 60px
+    padding: 0px
 
   .sheet__title
-    font-size: 48px
+    font-size: 12px
 
   .sheet__lead
-    font-size: 20px
+    font-size: 12px
+    margin-top: 35px
 
   .sheet__body
-    font-size: 16px
+    font-size: 12px
 
     blockquote
       padding-left: 40px
 
 @media screen and (min-width: 1300px)
   .sheet__slider
-    margin-right: -200px
+    margin-right: 0px
