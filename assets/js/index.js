@@ -7,4 +7,3 @@ import theme from './theme';
 initShowcase();
 initOffcanvasMenu();
 initSlider();
-createSlideshow();
