@@ -1,3 +1,4 @@
+$( document ).ready(function() {
 var Media = {
         LARGER_THAN_TABLET: "screen and (min-width: 768px)",
         SMALLER_THAN_TABLET: "screen and (max-width: 767px)"
@@ -353,4 +354,5 @@ $(document).ready(function() {
     FastClick.attach(document.body), "gallery" === _4ORMAT_DATA.page.type && Gallery.init(), "listing" === _4ORMAT_DATA.page.type && (Listing.resize(), Listing.animationCascade()), Menu.init()
 }), $(window).resize(function() {
     Listing.resize()
+});
 });
