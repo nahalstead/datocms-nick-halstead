@@ -21,7 +21,7 @@ export default function() {
                 useCSS              : false,
                 slideshow           : false,
                 animation           : 'fade',
-                easing:             : "easeOutQuad",
+                easing              : "easeOutQuad",
                 video               : false,
                 prevText            : 'prev',
                 nextText            : 'next',
