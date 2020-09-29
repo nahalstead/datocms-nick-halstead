@@ -11,7 +11,7 @@ export default function() {
   });
 }
 
-createSlideshow: function(e) {
+createSlideshow = function(e) {
     if ($(".assets_container").size()) {
         var t = 0;
         location.hash.match(/^#[0-9]+/) && (t = location.hash.slice(1) - 1);
