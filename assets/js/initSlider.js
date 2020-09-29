@@ -68,10 +68,10 @@ createSlideshow = function(e) {
                             })
                         }), o.hide(), a.show(), $(this).removeClass("icon-close").addClass("icon-grid"), s = !s), $("iframe").remove())
                     }), "Thumbnails" == _4ORMAT_DATA.theme.gallery_default && $(window).width() > 767 && (0 == i ? ($(".open-close-thumbs").trigger("click"), setTimeout(function() {
-                        $("body.gallery #assets").animate({
+                        $("#assets").animate({
                             opacity: 1
                         }, n)
-                    }, 200)) : $("body.gallery #assets").animate({
+                    }, 200)) : $("#assets").animate({
                         opacity: 1
                     }, n)), $(".thumb_container").on("click", "a", function(e, t) {
                         e.preventDefault(), t = void 0 === t || t;
