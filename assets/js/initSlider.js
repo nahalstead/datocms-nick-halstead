@@ -10,7 +10,7 @@ export default function() {
     lory(slider, { infinite: 2, enableMouseEvents: true });
   });
 }
-
+function initSlider() {
 ( function( $ ) {
 /* Flexslider ---------------------*/
     function flexSliderSetup() {
@@ -43,10 +43,10 @@ export default function() {
                     });
                     $('.grid-item').click(function() {
                         $('#slideshow').show();
-                        var slideTo = $(this).attr('id') //Grab rel value from link;
-                        var slideToInt = parseInt(slideTo) //Make sure that this value is an integer;
+                        var slideTo = $(this).attr('id'); //Grab rel value from link;
+                        var slideToInt = parseInt(slideTo); //Make sure that this value is an integer;
                         if (slider.currentSlide != slideToInt) {
-                            slider.flexAnimate(slideToInt-1) //move the slider to the correct slide (Unless the slider is also already showing the slide we want);
+                            slider.flexAnimate(slideToInt-1); //move the slider to the correct slide (Unless the slider is also already showing the slide we want);
                             console.log('currentSlide');
                         }
                     });
@@ -170,6 +170,7 @@ export default function() {
     //     }
     // }
     $( window )
-    .load( flexSliderSetup )
+    .load( flexSliderSetup );
     // .load ( createSlideshow );
 })( jQuery );
+}
