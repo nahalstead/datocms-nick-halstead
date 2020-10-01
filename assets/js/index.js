@@ -7,3 +7,4 @@ import initSlider from './initSlider';
 initShowcase();
 initOffcanvasMenu();
 initSlider();
+

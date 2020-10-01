@@ -10,7 +10,7 @@ export default function() {
     lory(slider, { infinite: 2, enableMouseEvents: true });
   });
 }
-function initSlider() {
+export default function initSlider() {
 ( function( $ ) {
 /* Flexslider ---------------------*/
     function flexSliderSetup() {
