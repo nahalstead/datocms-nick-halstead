@@ -75,7 +75,7 @@ $(window).load(function() {
     animationLoop       : true,
     smoothHeight        : false,
     keyboard            : true,
-    multipleKeyboard    : true
+    multipleKeyboard    : true,
 
     start: function(slider) {
     $(document).on("keydown", function(e) {
