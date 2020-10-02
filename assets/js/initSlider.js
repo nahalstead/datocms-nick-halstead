@@ -64,7 +64,7 @@ export default function initSlider() {
 $(window).load(function() {
   $('.flexslider').flexslider({
     animation           : "fade",
-    animationSpeed      : n,
+    animationSpeed      : 600,
     startAt             : 1,
     useCSS              : false,
     slideshow           : false,
@@ -75,8 +75,7 @@ $(window).load(function() {
     animationLoop       : true,
     smoothHeight        : false,
     keyboard            : true,
-    multipleKeyboard    : true,
-    customDirectionNav: $('.navigation a')
+    multipleKeyboard    : true
   });
 });
 }
