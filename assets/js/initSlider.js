@@ -76,6 +76,12 @@ $(window).load(function() {
     smoothHeight        : false,
     keyboard            : true,
     multipleKeyboard    : true
+
+    start: function(slider) {
+    $(document).on("keydown", function(e) {
+        ("39" != e.which || s || l.next(e), "37" != e.which || s || l.prev(e), "27" == e.which && "1" == $(".pagination").css("opacity") && (e.preventDefault(), $(".open-close-thumbs").trigger("click")))
+        }), $(".next").on("click", l.next), $(".prev").on("click", l.prev), $(".thumb_container .thumb_item").eq(i).find("a").trigger("click", [!1]), $(".load_iframe").addClass("icon-video").parent().append('<div class="layer"></div>')
+    }
   });
 });
 }
