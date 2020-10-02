@@ -27,7 +27,7 @@ export default function initSlider() {
     //                     smoothHeight        : false,
     //                     keyboard            : true,
     //                     multipleKeyboard    : true,
-    //                     customDirectionNav: $('.navigation a'),
+    //                     customDirectionNav: $('.navigation a')
 
     //                     start: function(slider) {
     //                         slider.removeClass('loading');
@@ -60,7 +60,23 @@ export default function initSlider() {
     //         flexSliderSetup();
     //     });
 
+// Can also be used with $(document).ready()
 $(window).load(function() {
-    $('.flexslider').flexslider();
+  $('.flexslider').flexslider({
+    animation           : "fade",
+    animationSpeed      : n,
+    startAt             : 1,
+    useCSS              : false,
+    slideshow           : false,
+    easing              : "easeOutQuad",
+    video               : false,
+    touch               : true,
+    controlNav          : false,
+    animationLoop       : true,
+    smoothHeight        : false,
+    keyboard            : true,
+    multipleKeyboard    : true,
+    customDirectionNav: $('.navigation a')
+  });
 });
 }
