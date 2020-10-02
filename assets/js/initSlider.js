@@ -14,9 +14,18 @@ export default function initSlider() {
 ( function( $ ) {
 /* Flexslider ---------------------*/
     function flexSliderSetup() {
+        if ($(".assets_container").size()) {
+            var t = 0;
+            location.hash.match(/^#[0-9]+/) && (t = location.hash.slice(1) - 1);
+            var i = parseInt(t || 0, 10),
+                n = 600,
+                s = o.some(function(e) {
+                    return "video" === e.type
+                });
         if( ($).flexslider) {
             var slider = $('.flexslider');
             slider.flexslider({
+                animationSpeed      : n,
                 startAt             : i,
                 useCSS              : false,
                 slideshow           : false,
