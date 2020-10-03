@@ -81,12 +81,13 @@ $(window).load(function() {
     var e = $(".pagination"),
     t = $(".gallery-navigation"),
     a = t.find(".navigation"),
+    o = t.find(".title"),
     s = !1;
     $(".open-close-thumbs").on("click", function(t, i) {
                                 t.preventDefault(), i = void 0 === i || i;
                                 var l = parseInt(e.css("left"), 10),
                                     r = $(".flexslider").position().top;
-                                i && (0 !== l || e.is(":animated") ? e.is(":animated") || ($(".flexslider").stop(!0, !0).animate({
+                                i && (0 !== l || ($(".flexslider").stop(!0, !0).animate({
                                     opacity: 0
                                 }, n), e.css({
                                     left: 0,
