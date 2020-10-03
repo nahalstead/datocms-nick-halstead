@@ -94,7 +94,7 @@ $(window).load(function() {
                                     top: r
                                 }).stop(!0, !0).animate({
                                     opacity: 1
-                                }, n), a.hide(), $(this).removeClass("icon-grid").addClass("icon-close"), s = !s) : ($(".flexslider").stop(!0, !0).animate({
+                                }, n), a.hide(), $(this).removeClass("icon-grid").addClass("icon-close")), ($(".flexslider").stop(!0, !0).animate({
                                     opacity: 1
                                 }, n), e.stop(!0, !0).animate({
                                     opacity: 0
