@@ -66,16 +66,16 @@ $(window).load(function() {
     animation           : "fade",
     animationSpeed      : 600,
     startAt             : 1,
-    useCSS              : false,
     slideshow           : false,
     easing              : "easeOutQuad",
     video               : false,
     touch               : true,
-    controlNav          : false,
+    controlNav          : true,
     animationLoop       : true,
     smoothHeight        : false,
     keyboard            : true,
     multipleKeyboard    : true,
+    customDirectionNav: $('.navigation a'),
 
     start: function(slider) {
     var e = $(".pagination"),
