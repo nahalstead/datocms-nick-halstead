@@ -52,14 +52,12 @@ export default function initSlider() {
                         });
                     }), o.hide(), a.show(), 
                     $(this).removeClass("icon-close").addClass("icon-grid"), s = !s));
-                }),
+                });
                 $(window).width() > 767 && (0 == i ? ($(".open-close-thumbs").trigger("click"), setTimeout(function() {
                     $("body.gallery #assets").animate({
                         opacity: 1
                     }, n)
-                }, 200)) : $("body.gallery #assets").animate({
-                    opacity: 1
-                }, n));
+                }, 200));
                 $(document).on("keydown", function(e) {
                     ("39" != e.which || s || l.next(e), "37" != e.which || s || l.prev(e), "27" == e.which && "1" == $(".pagination").css("opacity") && (e.preventDefault(), 
                         $(".open-close-thumbs").trigger("click")));
