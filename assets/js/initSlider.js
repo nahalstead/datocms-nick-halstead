@@ -2,76 +2,125 @@ export default function initSlider() {
 
     $(window).load(function() {
 
-        $('.flexslider').flexslider({
-            animation: "fade",
-            animationSpeed: 600,
-            startAt: 1,
-            slideshow: false,
-            easing: "easeOutQuad",
-            video: false,
-            touch: true,
-            controlNav: true,
-            animationLoop: true,
-            smoothHeight: false,
-            keyboard: true,
-            multipleKeyboard: true,
-            customDirectionNav: $('.navigation a'),
+        // initiate slider
+        var main = function() {
+            $('.next').add('.flexslider img').click(function() {
+                var currentSlide = $('.flexslider .active');
+                var nextSlide = currentSlide.next();
 
-            start: function(slider) {
-                var t = 0;
-                location.hash.match(/^#[0-9]+/) && (t = location.hash.slice(1) - 1);
-                var e = $(".pagination"),
-                    i = parseInt(t || 0, 10),
-                    n = 400,
-                    nav = $(".gallery-navigation"),
-                    a = nav.find(".navigation"),
-                    o = nav.find(".title"),
-                    s = !1;
-                $(".open-close-thumbs").on("click", function(nav, i) {
-                    nav.preventDefault(), i = void 0 === i || i;
-                    var l = parseInt($(".pagination").css("left"), 10),
-                        r = $(".flexslider").position().top;
-                    i && (0 !== l || ($(".flexslider").stop(!0, !0).animate({
-                        opacity: 0
-                    }, n), 
-                    $(".pagination").css({
-                        left: 0,
-                        top: r
-                    }).stop(!0, !0).animate({
-                        opacity: 1
-                    }, n), 
-                    $(".navigation").hide(), $(this).removeClass("icon-grid").addClass("icon-close")), ($(".flexslider").stop(!0, !0).animate({
-                        opacity: 1
-                    }, n), 
-                    e.stop(!0, !0).animate({
-                        opacity: 0
-                    }, n, function() {
-                        $(".pagination").css({
-                            left: "-100%",
-                            top: "-9000em"
-                        });
-                    }), o.hide(), a.show(), 
-                    $(this).removeClass("icon-close").addClass("icon-grid"), s = !s));
-                });
-                $(window).width() > 767 && (0 == i ? ($(".open-close-thumbs").trigger("click"), setTimeout(function() {
-                    $("body.gallery #assets").animate({
-                        opacity: 1
-                    }, n)
-                }, 200));
-                $(document).on("keydown", function(e) {
-                    ("39" != e.which || s || l.next(e), "37" != e.which || s || l.prev(e), "27" == e.which && "1" == $(".pagination").css("opacity") && (e.preventDefault(), 
-                        $(".open-close-thumbs").trigger("click")));
-                }), 
-                $(".next").on("click", l.next), $(".prev").on("click", l.prev), 
-                $(".thumb_container .thumb_item").eq(i).find("a").trigger("click", [!1]);
-            },
-            after: function(e) {
-                if (!l) {
-                    l = !0, $(".js_slider_previous").removeClass("js_slider_previous");
-                    var t = $(e.slides[e.currentSlide + 1]);
-                    t.find(".lazyload").length && lazySizes.loader.unveil(t.find(".lazyload")[0]);
+                if (nextSlide.length == 0) {
+                    nextSlide = $('.flexslider img').first();
                 }
-            }
+
+                currentSlide.fadeOut(100).removeClass('active');
+                nextSlide.fadeIn(100).addClass('active');
+            });
+            $('.prev').click(function() {
+                var currentSlide = $('.active');
+                var prevSlide = currentSlide.prev();
+
+                if (prevSlide.length == 0) {
+                    prevSlide = $('.flexslider img').last();
+                }
+
+                currentSlide.fadeOut(100).removeClass('active');
+                prevSlide.fadeIn(100).addClass('active');
+            });
+
+            // initiate thumbnail click function to find corresponding slide
+            $('.slideshow_thumbnails > img').click(function() {
+                // toggle inactive all images in slideshow 
+                $('.flexslider img').toggleClass('inactive');
+
+                // hide thumbnails
+                $('.slideshow_thumbnails').toggleClass('hide').removeClass('show');
+
+                // show flexslider
+                $('.flexslider').toggleClass('show').removeClass('hide');
+
+                //Define current slide
+                var currentSlide = $('.flexslider .active');
+                currentSlide.toggleClass('active');
+
+                //Define current slide integer
+                var currentSlideInt = $('.flexslider .active').data("id");
+
+                //Grab data-id value from thumbnail;
+                var slideTo = $(this).data("id")
+
+                //Make sure that this value is an integer;
+                var slideToInt = parseInt(slideTo);
+
+                //Define "selected" slide to travel to
+                var slideSelected = $('.flexslider .image-' + slideToInt);
+
+                //move flexslider to the correct slide
+                slideSelected.fadeIn(100).toggleClass('active');
+            })
+        };
+
+        // run flexslider
+        $(document).ready(main);
+
+        // Count slides and thumbnails and assign to data-id for each element
+        $(document).ready(function() {
+            var i = 0;
+            $(".flexslider img").each(function() {
+                $(this).attr("data-id", +i);
+                i++;
+            });
         });
+        $(document).ready(function() {
+            var i = 0;
+            $(".flexslider img").each(function() {
+                $(this).addClass(("image-") + (+i));
+                i++;
+            });
+        });
+        $(document).ready(function() {
+            var i = 0;
+            $(".slideshow_thumbnails img").each(function() {
+                $(this).attr("data-id", +i);
+                i++;
+            });
+        });
+
+        // Thumbnail toggle function
+        $(document).ready(function() {
+            var count = $('.flexslider').children().length;
+            var currentSlide = $('.flexslider .active');
+
+            $('.open-close-thumbs').click(function() {
+                $('.thumb_container').toggleClass('show');
+                $('.flexslider').toggleClass('hide');
+                $('.flexslider img').toggleClass('inactive');
+                currentSlide.toggleClass('active');
+            })
+        });
+
+        // Set responsive image width & height function
+
+        function getWidth() {
+            var e = null;
+            e = document.getElementsByTagName('img');
+            var imageWidth = $('.flexslider img').get(0).naturalWidth;
+            var imageHeight = $('.flexslider img').get(0).naturalHeight;
+            var t = $('.flexslider img').get(0).naturalHeight;
+            var n = $('.flexslider img').get(0).naturalWidth;
+            var r = ($(window).height() - 20) / t;
+            var i = $(window).width() / n;
+            return r < i ? r / i * 100 + "%" : "100%";
+        }
+
+        $(document).ready(function() {
+            $('.flexslider img').css("max-width", getWidth())
+            $('.flexslider img').css({
+                "display": "block"
+            })
+        });
+        $(window).resize(function() {
+            $(".flexslider img").css("max-width", getWidth())
+        });
+
     });
 }
