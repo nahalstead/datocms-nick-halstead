@@ -18,17 +18,18 @@ export default function initSlider() {
             customDirectionNav: $('.navigation a'),
 
             start: function(slider) {
+                var t = 0;
                 location.hash.match(/^#[0-9]+/) && (t = location.hash.slice(1) - 1);
                 var e = $(".pagination"),
                     i = parseInt(t || 0, 10),
                     n = 400,
-                    t = $(".gallery-navigation"),
-                    a = t.find(".navigation"),
-                    o = t.find(".title"),
+                    nav = $(".gallery-navigation"),
+                    a = nav.find(".navigation"),
+                    o = nav.find(".title"),
                     s = !1;
-                $(".open-close-thumbs").on("click", function(t, i) {
-                    t.preventDefault(), i = void 0 === i || i;
-                    var l = parseInt(e.css("left"), 10),
+                $(".open-close-thumbs").on("click", function(nav, i) {
+                    nav.preventDefault(), i = void 0 === i || i;
+                    var l = parseInt($(".pagination").css("left"), 10),
                         r = $(".flexslider").position().top;
                     i && (0 !== l || ($(".flexslider").stop(!0, !0).animate({
                         opacity: 0
