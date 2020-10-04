@@ -84,6 +84,10 @@ div, embed
     width: 100%
     margin: 0
     padding: 0
+    opacity: 1
+
+.flexslider.hide 
+  opacity:0
 
 .assets_container .asset.flex-active-slide > div 
     display: block !important;
@@ -140,15 +144,20 @@ audio, canvas, video
     overflow: hidden
 
 .pagination 
-    position: absolute;
-    top: -9000em;
-    left: -100%;
-    width: 100%;
-    z-index: 9999;
-    padding-top: 30px;
-    background: #ffffff;
-    opacity: 0;
-    min-height: 100%;
+    position: absolute
+    top: -9000em
+    left: -100%
+    width: 100%
+    z-index: 9999
+    padding-top: 30px
+    background: #ffffff
+    opacity: 0
+    min-height: 100%
+
+.pagination.show 
+  left: 0px
+  top: 27px
+  opacity: 1
 
 .pagination ul.thumb_container 
     -webkit-box-sizing: content-box
