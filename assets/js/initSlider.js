@@ -245,7 +245,7 @@ var Media = {
                 })
             }
         }
-    },  
+    }; 
   $('.flexslider').flexslider({
     animation           : "fade",
     animationSpeed      : 600,
