@@ -32,17 +32,17 @@ export default function initSlider() {
                         r = $(".flexslider").position().top;
                     i && (0 !== l || ($(".flexslider").stop(!0, !0).animate({
                         opacity: 0
-                    }, n), e.css({
+                    }, n), $(".pagination").css({
                         left: 0,
                         top: r
                     }).stop(!0, !0).animate({
                         opacity: 1
-                    }, n), a.hide(), $(this).removeClass("icon-grid").addClass("icon-close")), ($(".flexslider").stop(!0, !0).animate({
+                    }, n), $(".navigation").hide(), $(this).removeClass("icon-grid").addClass("icon-close")), ($(".flexslider").stop(!0, !0).animate({
                         opacity: 1
                     }, n), e.stop(!0, !0).animate({
                         opacity: 0
                     }, n, function() {
-                        e.css({
+                        $(".pagination").css({
                             left: "-100%",
                             top: "-9000em"
                         });
