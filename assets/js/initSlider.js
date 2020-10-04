@@ -33,25 +33,39 @@ export default function initSlider() {
                         r = $(".flexslider").position().top;
                     i && (0 !== l || ($(".flexslider").stop(!0, !0).animate({
                         opacity: 0
-                    }, n), $(".pagination").css({
+                    }, n), 
+                    $(".pagination").css({
                         left: 0,
                         top: r
                     }).stop(!0, !0).animate({
                         opacity: 1
-                    }, n), $(".navigation").hide(), $(this).removeClass("icon-grid").addClass("icon-close")), ($(".flexslider").stop(!0, !0).animate({
+                    }, n), 
+                    $(".navigation").hide(), $(this).removeClass("icon-grid").addClass("icon-close")), ($(".flexslider").stop(!0, !0).animate({
                         opacity: 1
-                    }, n), e.stop(!0, !0).animate({
+                    }, n), 
+                    e.stop(!0, !0).animate({
                         opacity: 0
                     }, n, function() {
                         $(".pagination").css({
                             left: "-100%",
                             top: "-9000em"
                         });
-                    }), o.hide(), a.show(), $(this).removeClass("icon-close").addClass("icon-grid"), s = !s));
-                });
+                    }), o.hide(), a.show(), 
+                    $(this).removeClass("icon-close").addClass("icon-grid"), s = !s));
+                }),
+                $(window).width() > 767 && (0 == i ? ($(".open-close-thumbs").trigger("click"), setTimeout(function() {
+                    $("body.gallery #assets").animate({
+                        opacity: 1
+                    }, n)
+                }, 200)) : $("body.gallery #assets").animate({
+                    opacity: 1
+                }, n));
                 $(document).on("keydown", function(e) {
-                    ("39" != e.which || s || l.next(e), "37" != e.which || s || l.prev(e), "27" == e.which && "1" == $(".pagination").css("opacity") && (e.preventDefault(), $(".open-close-thumbs").trigger("click")));
-                }), $(".next").on("click", l.next), $(".prev").on("click", l.prev), $(".thumb_container .thumb_item").eq(i).find("a").trigger("click", [!1]);
+                    ("39" != e.which || s || l.next(e), "37" != e.which || s || l.prev(e), "27" == e.which && "1" == $(".pagination").css("opacity") && (e.preventDefault(), 
+                        $(".open-close-thumbs").trigger("click")));
+                }), 
+                $(".next").on("click", l.next), $(".prev").on("click", l.prev), 
+                $(".thumb_container .thumb_item").eq(i).find("a").trigger("click", [!1]);
             },
             after: function(e) {
                 if (!l) {
