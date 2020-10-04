@@ -27,7 +27,7 @@ export default function initSlider() {
                     o = t.find(".title"),
                     s = !1;
                 $(".open-close-thumbs").on("click", function(t, i) {
-                    // t.preventDefault(), i = void 0 === i || i;
+                    t.preventDefault(), i = void 0 === i || i;
                     var l = parseInt(e.css("left"), 10),
                         r = $(".flexslider").position().top;
                     i && (0 !== l || ($(".flexslider").stop(!0, !0).animate({
