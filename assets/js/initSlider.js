@@ -4,7 +4,7 @@ export default function initSlider() {
 
         // initiate slider
         var main = function() {
-            $('.assets_container').first().addClass('flex-active-slide');
+            $('.asset').first().addClass('flex-active-slide');
             $('.next').add('.flexslider .image-wrapper').click(function() {
                 var currentSlide = $('.flexslider .flex-active-slide');
                 var nextSlide = currentSlide.next();
