@@ -17,11 +17,14 @@ export default function initSlider() {
                 }
 
                 if (nextThumb.length == 0) {
-                    nextThumb = $('.thumb_container').first();
+                    nextThumb = $('.thumb_item').first();
                 }
 
                 currentSlide.fadeOut(100).removeClass('flex-active-slide');
                 nextSlide.fadeIn(100).addClass('flex-active-slide');
+
+                currentThumb.removeClass('active');
+                nextThumb.addClass('active');
             });
             $('.prev').click(function() {
                 var currentSlide = $('.flexslider .flex-active-slide');
@@ -34,11 +37,14 @@ export default function initSlider() {
                 }
 
                 if (prevThumb.length == 0) {
-                    prevThumb = $('.thumb_container').last();
+                    prevThumb = $('.thumb_item').last();
                 }
 
                 currentSlide.fadeOut(100).removeClass('flex-active-slide');
                 prevSlide.fadeIn(100).addClass('flex-active-slide');
+
+                currentThumb.removeClass('active');
+                nextThumb.addClass('active');
             });
 
             // initiate thumbnail click function to find corresponding slide
