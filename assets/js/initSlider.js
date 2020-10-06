@@ -5,23 +5,36 @@ export default function initSlider() {
         // initiate slider
         var main = function() {
             $('.asset').first().addClass('flex-active-slide');
+            $('.thumb_container').first().addClass('active');
             $('.next').add('.flexslider .image-wrapper').click(function() {
                 var currentSlide = $('.flexslider .flex-active-slide');
                 var nextSlide = currentSlide.next();
+                var currentThumb = $('.thumb_item.active');
+                var nextThumb = currentThumb.next();
 
                 if (nextSlide.length == 0) {
-                    nextSlide = $('.asset .image').first();
+                    nextSlide = $('.assets_container').first();
+                }
+
+                if (nextThumb.length == 0) {
+                    nextThumb = $('.thumb_container').first();
                 }
 
                 currentSlide.fadeOut(100).removeClass('flex-active-slide');
                 nextSlide.fadeIn(100).addClass('flex-active-slide');
             });
             $('.prev').click(function() {
-                var currentSlide = $('.flex-active-slide');
+                var currentSlide = $('.flexslider .flex-active-slide');
                 var prevSlide = currentSlide.prev();
+                var currentThumb = $('.thumb_item.active');
+                var prevThumb = currentThumb.prev();
 
                 if (prevSlide.length == 0) {
-                    prevSlide = $('.asset .image').last();
+                    prevSlide = $('.assets_container').last();
+                }
+
+                if (prevThumb.length == 0) {
+                    prevThumb = $('.thumb_container').last();
                 }
 
                 currentSlide.fadeOut(100).removeClass('flex-active-slide');
@@ -66,21 +79,21 @@ export default function initSlider() {
         // Count slides and thumbnails and assign to data-id for each element
         $(document).ready(function() {
             var i = 0;
-            $(".asset .image").each(function() {
+            $(".asset").each(function() {
                 $(this).attr("data-id", +i);
                 i++;
             });
         });
         $(document).ready(function() {
             var i = 0;
-            $(".asset .image").each(function() {
+            $(".asset").each(function() {
                 $(this).addClass(("image-") + (+i));
                 i++;
             });
         });
         $(document).ready(function() {
             var i = 0;
-            $(".pagination > img").each(function() {
+            $(".thumb_item").each(function() {
                 $(this).attr("data-id", +i);
                 i++;
             });
