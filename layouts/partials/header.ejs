@@ -34,15 +34,6 @@
             </li>
           </ul>
 
-          <p class="sidebar__social">
-            <% settings.socialProfiles.forEach(profile => { %>
-              <a href="<%= profile.url %>" class="social social--<%= profile.type %>"></a>
-            <% }) %>
-          </p>
-
-          <div class="sidebar__copyright">
-            <%= settings.copyright %>
-          </div>
         </div>
       </div>
 
