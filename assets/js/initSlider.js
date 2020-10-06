@@ -13,7 +13,7 @@ export default function initSlider() {
                 var nextThumb = currentThumb.next();
 
                 if (nextSlide.length == 0) {
-                    nextSlide = $('.assets_container').first();
+                    nextSlide = $('.asset').first();
                 }
 
                 if (nextThumb.length == 0) {
@@ -33,7 +33,7 @@ export default function initSlider() {
                 var prevThumb = currentThumb.prev();
 
                 if (prevSlide.length == 0) {
-                    prevSlide = $('.assets_container').last();
+                    prevSlide = $('.asset').last();
                 }
 
                 if (prevThumb.length == 0) {
@@ -72,7 +72,7 @@ export default function initSlider() {
                 var slideToInt = parseInt(slideTo);
 
                 //Define "selected" slide to travel to
-                var slideSelected = $('.asset .image-' + slideToInt);
+                var slideSelected = $('.image-' + slideToInt);
 
                 //move flexslider to the correct slide
                 slideSelected.fadeIn(100).toggleClass('flex-active-slide');
