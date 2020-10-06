@@ -105,6 +105,8 @@ export default function initSlider() {
             var currentSlide = $('.flexslider .flex-active-slide');
 
             $('.open-close-thumbs').click(function() {
+                $(this).toggleClass("fa-th");
+                $(this).toggleClass("fa-times");
                 $('.pagination').toggleClass('show');
                 $('.flexslider').toggleClass('hide');
                 $('.asset .image').toggleClass('inactive');
