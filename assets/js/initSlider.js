@@ -58,6 +58,9 @@ export default function initSlider() {
                 // show flexslider
                 $('.flexslider').toggleClass('hide');
 
+                $('.open-close-thumbs').toggleClass("fa-th");
+                $('.open-close-thumbs').toggleClass("fa-times");
+
                 //Define current slide
                 var currentSlide = $('.flexslider .flex-active-slide');
                 currentSlide.toggleClass('flex-active-slide');
