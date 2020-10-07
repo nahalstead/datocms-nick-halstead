@@ -48,18 +48,18 @@ export default function initSlider() {
             });
 
             // initiate thumbnail click function to find corresponding slide
-            $('.pagination > img').click(function() {
+            $('.thumb_item').click(function() {
                 // toggle inactive all images in slideshow 
                 $('.asset .image').toggleClass('inactive');
 
                 // hide thumbnails
-                $('.slideshow_thumbnails').toggleClass('hide').removeClass('show');
+                $('.pagination').toggleClass('show');
 
                 // show flexslider
-                $('.flexslider').toggleClass('show').removeClass('hide');
+                $('.flexslider').toggleClass('hide');
 
                 //Define current slide
-                var currentSlide = $('.flex-active-slide .image');
+                var currentSlide = $('.flexslider .flex-active-slide');
                 currentSlide.toggleClass('flex-active-slide');
 
                 //Define current slide integer
