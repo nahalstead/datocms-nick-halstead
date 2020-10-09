@@ -1,5 +1,5 @@
 .card
-  box-shadow: 0 0 5px #ccc
+  box-shadow: 0 0 0px #ccc
 
 .card__image
   display: block
@@ -25,7 +25,7 @@
   &:after
     width: 80px
     height: 80px
-    background: url('https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/svgs/fi-magnifying-glass.svg')
+    background: transparent
     background-position: 50% 50%
     background-repeat: no-repeat
     background-size: contain
@@ -43,16 +43,16 @@
 
 .card__caption
   background-color: white
-  padding: 20px;
+  padding: 20px 0px;
 
 .card__title
   margin-bottom: 10px
 
   a
-    text-transform: uppercase
+    text-transform: none
     text-decoration: none
-    font-weight: bold
-    font-size: 16px
+    font-weight: normal
+    font-size: 12px
     color: $dark-body-color
 
     &:hover
@@ -62,3 +62,4 @@
   color: $light-body-color
   font-size: 14px
   line-height: 1.4
+  display: none
