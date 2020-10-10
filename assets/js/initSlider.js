@@ -142,7 +142,23 @@ export default function initSlider() {
             $('.flexslider > img').css({
                 "display": "block"
             })
+
+            // run test on initial page load
+            checkSize();
+
+            // run test on resize of the window
+            $(window).resize(checkSize);
+
         });
+
+        //Function to the css rule
+        function checkSize(){
+            if ($(".mobile-menu").css("display") == "block" ){
+                $(".flexslider").removeClass('hide');
+                $(".pagination").removeClass('show');
+            }
+        }
+
         $(window).resize(function() {
             $(".flexslider > img").css("max-width", getWidth())
         });
