@@ -35,7 +35,9 @@
             </li>
             
             <li class="<%= path === 'work.path' ? 'is-active' : '' %> item">
-              <a href="/<%= work.path %>"><%= work.title %></a>
+              <% settings.works.forEach(work => { %>
+                <a href="/<%= work.url %>"><%= work.title %></a>
+              <% }) %>
             </li>
             
             <li class="<%= path === 'about.html' ? 'is-active' : '' %> item">
