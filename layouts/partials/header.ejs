@@ -34,11 +34,13 @@
               <a href="/#">Works</a>
             </li>
             
-            <li class="<%= path === 'work.path' ? 'is-active' : '' %> item">
+            <ul class="submenu">
               <% works.forEach((work, index) => { %>
-                <a href="/<%= work.path %>"><%= work.title %></a>
+                <li class="<%= path === 'work.path' ? 'is-active' : '' %> item">
+                  <a href="/<%= work.path %>"><%= work.title %></a>
+                </li>
               <% }) %>
-            </li>
+            </ul>
             
             <li class="<%= path === 'about.html' ? 'is-active' : '' %> item">
               <a href="/about.html">About</a>
