@@ -30,6 +30,14 @@
             <li class="<%= path === 'index.html' ? 'is-active' : '' %> item">
               <a href="/">Home</a>
             </li>
+            <li class="<%= path === 'index.html' ? 'is-active' : '' %> item">
+              <a href="/#">Works</a>
+            </li>
+            <% pagination.files.forEach((work, index) => { %>
+            <li class="<%= path === 'work.path' ? 'is-active' : '' %> item">
+              <a href="/<%= work.path %>"><%= work.title %></a>
+            </li>
+            <% }) %>
             <li class="<%= path === 'about.html' ? 'is-active' : '' %> item">
               <a href="/about.html">About</a>
             </li>
