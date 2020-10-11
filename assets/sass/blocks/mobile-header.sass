@@ -67,4 +67,32 @@
     text-overflow: ellipsis
     white-space: nowrap
 
+  .sidebar__copyright 
+    display: none
 
+  .mobile-menu.active .mobile-menu-panel 
+    -webkit-transform: translateX(0%)
+    transform: translateX(0%)
+
+  .mobile-menu.active .mobile-menu-panel 
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+
+  .mobile-menu.active .mobile-menu-overlay 
+    opacity: 1.0
+    pointer-events: auto
+
+  .mobile-menu-overlay 
+    display: block
+    background: rgba(0, 0, 0, 0.3)
+    position: fixed
+    top: -40px
+    left: 0
+    right: 0
+    bottom: -40px
+    opacity: 0.0
+    pointer-events: none
+    transition: opacity 450ms ease
+    z-index: 3
+
+  body.locked 
+    overflow: hidden

@@ -68,14 +68,29 @@
         <div class="mobile-menu-overlay"></div>
         <div class="mobile-menu-panel">
           <div class="mobile-menu-links">
-            <div class="mobile-header__menu">
-              <a href="#" data-js="toggleSidebar"></a>
-            </div>
-            <div class="mobile-header__logo">
-              <a href="/index.html">
-                <%= settings.name %>
-              </a>
+            <a href="/">Home</a>
+            <a href="/#">Works</a>
+            <% works.forEach((work, index) => { %>
+               <a href="/<%= work.path %>"><%= work.title %></a>
+            <% }) %>
+          </div>
+          <div class="mobile-menu-social-links">
+            <div id="social" class="social">
+              <ul>
+                <% settings.socialProfiles.forEach(profile => { %>
+                  <li>
+                    <a href="<%= profile.url %>" class="social social--<%= profile.type %>"></a>
+                  </li>
+                <% }) %>
+              </ul>
             </div>
           </div>
+          <a href="#!" class="mobile-menu-close-button" style="top: 20px;">
+            <svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path d="M9.5,7.38888889 L2.11111111,-3.01980663e-14 L-2.30926389e-14,2.11111111 L7.38888889,9.5 L-2.13162821e-14,16.8888889 L2.11111111,19 L9.5,11.6111111 L16.8888889,19 L19,16.8888889 L11.6111111,9.5 L19,2.11111111 L16.8888889,-3.01980663e-14 L9.5,7.38888889 Z" fill="#222222"></path>
+                </g>
+            </svg>
+          </a>
         </div>
       </div>
