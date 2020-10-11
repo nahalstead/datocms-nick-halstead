@@ -68,11 +68,12 @@
         <div class="mobile-menu-overlay"></div>
         <div class="mobile-menu-panel">
           <div class="mobile-menu-links">
-            <a href="/">Home</a>
-            <a href="/#">Works</a>
+            <a class="item" href="/">Home</a>
+            <a class="item" href="/#">Works</a>
             <% works.forEach((work, index) => { %>
-               <a href="/<%= work.path %>"><%= work.title %></a>
+               <a class="item" href="/<%= work.path %>"><%= work.title %></a>
             <% }) %>
+            <a class="item" href="/about.html">About</a>
           </div>
           <div class="mobile-menu-social-links">
             <div id="social" class="social">
