@@ -28,9 +28,6 @@
 
           <ul class="menu-nav">
             <li class="<%= path === 'index.html' ? 'is-active' : '' %> item">
-              <a href="/">Home</a>
-            </li>
-            <li class="<%= path === 'index.html' ? 'is-active' : '' %> item">
               <a href="/#">Works</a>
             </li>
             
@@ -68,8 +65,6 @@
         <div class="mobile-menu-overlay"></div>
         <div class="mobile-menu-panel">
           <div class="mobile-menu-links">
-            <a class="item" href="/">Home</a>
-            <a class="item" href="/#">Works</a>
             <% works.forEach((work, index) => { %>
                <a class="item" href="/<%= work.path %>"><%= work.title %></a>
             <% }) %>
