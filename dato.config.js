@@ -59,7 +59,6 @@ module.exports = (dato, root, i18n) => {
           seoMetaTags: work.seoMetaTags,
           extraImages: work.gallery.map(image =>
             image.url({ h: 800, fm: 'jpg', auto: 'compress' })
-            image.title
           ),
         },
         content: work.description

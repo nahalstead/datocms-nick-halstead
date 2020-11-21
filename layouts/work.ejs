@@ -24,13 +24,16 @@
                 <span>
                   <div class="image-wrapper">
                   <canvas class="image-placeholder" width="1600" height="1067"></canvas>
-                  <img src="<%= image %>" title="<%= image.title %>">
+                  <img src="<%= image %>">
                   </div>
                 </span>
               </div>
             </li>
             <div class="caption"><%= image.title %></div>
           <% }) %>  
+          <%= work.gallery.each do |image| %>
+            <div class="caption"><%= image.title %></div>
+          <% end %>
           </ul>
         </div>
 
