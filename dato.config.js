@@ -62,7 +62,7 @@ module.exports = (dato, root, i18n) => {
           ),
           imageCaption: work.gallery.map(image => {
             return {
-              image.title,
+              image.title
             };
           }),
         },
