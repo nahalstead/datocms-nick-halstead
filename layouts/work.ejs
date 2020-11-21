@@ -29,9 +29,11 @@
                 </span>
               </div>
             </li>
-            <div class="caption"><%= image.title %></div>
+            
           <% }) %>  
-
+          <% extraImages.forEach(image => { %>
+            <div class="caption"><%= image.title %></div>
+          <% }) %>
           </ul>
         </div>
 
