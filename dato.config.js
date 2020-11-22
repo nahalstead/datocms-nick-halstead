@@ -61,7 +61,6 @@ module.exports = (dato, root, i18n) => {
             image.url({ h: 800, fm: 'jpg', auto: 'compress' }),
           ),
           imageCaption: allWorks.gallery.title,
-          ),
         },
         content: work.description
       });
