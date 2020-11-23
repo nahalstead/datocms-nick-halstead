@@ -60,7 +60,9 @@ module.exports = (dato, root, i18n) => {
           extraImages: work.gallery.map(image =>
             image.url({ h: 800, fm: 'jpg', auto: 'compress' }),
           ),
-          imageCaption: work.gallery.image.title,
+          extraImages.forEach(image => 
+              imageTitle: image.title,
+          ),
         },
         content: work.description
       });
