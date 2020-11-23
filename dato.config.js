@@ -58,11 +58,11 @@ module.exports = (dato, root, i18n) => {
           excerpt: work.excerpt,
           seoMetaTags: work.seoMetaTags,
           extraImages: work.gallery.map(image =>
-            image.url({ h: 800, fm: 'jpg', auto: 'compress' }),
+            image.url({ h: 800, fm: 'jpg', auto: 'compress' })
           ),
-          imageCaption: work.gallery.map(image => 
-              image.title,
-          ),
+          imageCaption: extraImages.forEach((image, index) => console.log(`${index}:${image}`) {
+            image.title
+          }); 
         },
         content: work.description
       });
