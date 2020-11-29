@@ -28,7 +28,9 @@
                   </div>
                 </span>
               </div>
-              <p class="caption"><%= imageCaption %></p>
+              <%= imageCaption.forEach(val, index) => { %>
+              <p class="caption"><% (val) %></p>
+             <% }) %>
             </li>
           <% }) %>  
           </ul>
