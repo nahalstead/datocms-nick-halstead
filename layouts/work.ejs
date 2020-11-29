@@ -18,7 +18,7 @@
 
         <div class="flexslider js_max_height_target">
           <ul class="assets_container slides">
-          <% extraImages.forEach((image, index) => { %>
+          <% extraImages.forEach(image => { %>
             <li class="asset image no_caption">
               <div class="image">
                 <span>
@@ -28,7 +28,7 @@
                   </div>
                 </span>
               </div>
-              <%= imageCaption.forEach(val, index) => { %>
+              <%= imageCaption.forEach((val, index) => { %>
               <p class="caption"><% (val) %></p>
              <% }) %>
             </li>
